@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.com.google.dagger.hilt.android)
+    alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.org.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -66,4 +69,45 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.coil.compose)
+
+    implementation(libs.ui)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.material3)
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.navigation)
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    implementation(libs.serialization.json)
+
+    implementation(libs.retrofit2)
+    implementation(libs.converter.gson)
+    implementation(libs.interceptor)
+    implementation(libs.retrofit.adapter)
+    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.kotlin.serialization)
+
+    implementation(libs.room.paging)
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
+
+    implementation(libs.multidex)
+    implementation(libs.swipe.refresh)
+    implementation(libs.glide)
+    implementation(libs.extended.icon)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
+    ksp(libs.room.compiler)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.hilt.compose)
+
+
 }
