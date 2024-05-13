@@ -21,6 +21,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+//            }
+//        }
+
     }
 
     buildTypes {
@@ -87,6 +94,7 @@ dependencies {
 
     implementation(libs.retrofit2)
     implementation(libs.converter.gson)
+    implementation(libs.converter.moshi)
     implementation(libs.interceptor)
     implementation(libs.retrofit.adapter)
     implementation(libs.retrofit.kotlin.serialization)

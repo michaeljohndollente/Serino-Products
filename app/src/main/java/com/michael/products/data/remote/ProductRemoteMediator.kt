@@ -9,6 +9,7 @@ import coil.network.HttpException
 import com.michael.products.data.local.ProductDatabase
 import com.michael.products.data.local.ProductEntity
 import com.michael.products.data.mappers.toProductEntity
+import kotlinx.coroutines.delay
 import okio.IOException
 
 @OptIn(ExperimentalPagingApi::class)
@@ -37,6 +38,7 @@ class ProductRemoteMediator(
                 }
             }
 
+            delay(2000L)
             val products = productApi.getProducts(
                 page = loadKey,
                 pageCount = state.config.pageSize
