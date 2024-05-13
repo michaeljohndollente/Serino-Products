@@ -37,8 +37,8 @@ fun ProductItem(
                 .padding(16.dp)
         ) {
             AsyncImage(
-                model = product.images,
-                contentDescription = product.title,
+                model = product.images.first(),
+                contentDescription = product.images.first(),
                 modifier = Modifier
                     .weight(1f)
                     .height(150.dp)
@@ -47,6 +47,7 @@ fun ProductItem(
             Column(
                 modifier = Modifier
                     .weight(3f)
+                    .align(Alignment.CenterVertically)
             ) {
                 Text(
                     text = product.title,

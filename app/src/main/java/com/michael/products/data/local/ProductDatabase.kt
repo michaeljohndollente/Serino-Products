@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 
 @Database(
     entities = [ProductEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(ImageConverter::class)

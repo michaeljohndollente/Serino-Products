@@ -48,12 +48,12 @@ class ProductRemoteMediator(
                 if (loadType == LoadType.REFRESH) {
                     productDb.dao.clearCache()
                 }
-                val productEntities = products.map { it.toProductEntity() }
+                val productEntities = products.products.map { it.toProductEntity() }
                 productDb.dao.upsertAll(productEntities)
             }
 
             MediatorResult.Success(
-                endOfPaginationReached = products.isEmpty()
+                endOfPaginationReached = products.products.isEmpty()
             )
 
         } catch (e: IOException) {

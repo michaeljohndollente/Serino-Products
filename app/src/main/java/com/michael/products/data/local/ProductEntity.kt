@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 
-@Entity
+@Entity(tableName = "products")
 data class ProductEntity(
     @PrimaryKey val id: Int,
     val title: String,

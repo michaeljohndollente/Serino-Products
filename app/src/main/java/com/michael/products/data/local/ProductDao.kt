@@ -11,10 +11,10 @@ interface ProductDao {
     @Upsert
     suspend fun upsertAll(products: List<ProductEntity>)
 
-    @Query("SELECT * FROM productentity")
+    @Query("SELECT * FROM products")
     fun pagingSource(): PagingSource<Int, ProductEntity>
 
-    @Query("Delete FROM productentity")
+    @Query("Delete FROM products")
     suspend fun clearCache()
 
 }

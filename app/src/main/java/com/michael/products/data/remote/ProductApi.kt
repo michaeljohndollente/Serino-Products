@@ -8,9 +8,9 @@ interface ProductApi {
     suspend fun getProducts(
         @Query("page") page: Int,
         @Query("per_page") pageCount: Int
-    ): List<ProductDto>
+    ): ProductsData
 
-    companion object{
+    companion object {
         const val BASE_URL = "https://dummyjson.com/"
     }
 
