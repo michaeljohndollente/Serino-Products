@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(
-                            route = Screen.DetailsScreen.route + "?id={id}&title={title}&description={description}&price={price}&category={category}&brand={brand}&thumbnail={thumbnail}&images={images}",
+                            route = Screen.DetailsScreen.route + "?title={title}&description={description}&price={price}&category={category}&brand={brand}&thumbnail={thumbnail}&images={images}",
                             arguments = listOf(
                                 navArgument(
                                     name = "title"
@@ -89,13 +89,8 @@ class MainActivity : ComponentActivity() {
                             val jsonImages =
                                 backStackEntry.arguments!!.getString("images")!!
 
-                            val resultImages = mutableListOf<String>()
-
-                            for (i in jsonImages.indices) {
-                                if (jsonImages[i] == '[') {
-                                    resultImages.add(jsonImages[i].toString())
-                                }
-                            }
+                            val cleanedString = jsonImages.removeSurrounding("[", "]")
+                            val urlList: List<String> = cleanedString.split(",").map { it.trim() }
 
                             DetailsScreen(
                                 title = productTitle,
@@ -104,12 +99,11 @@ class MainActivity : ComponentActivity() {
                                 category = productCategory,
                                 brand = productBrand,
                                 thumbnail = productThumbnail,
-                                images = resultImages
+                                images = urlList
                             )
                         }
                     }
                 }
-
             }
         }
     }

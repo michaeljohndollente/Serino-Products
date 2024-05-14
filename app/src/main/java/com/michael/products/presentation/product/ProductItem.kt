@@ -15,11 +15,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.michael.products.domain.Product
-import com.michael.products.ui.theme.MyProductsTheme
 
 @Composable
 fun ProductItem(
@@ -40,8 +38,9 @@ fun ProductItem(
                 model = product.thumbnail,
                 contentDescription = product.thumbnail,
                 modifier = Modifier
-                    .weight(1f)
-                    .height(150.dp)
+                    .weight(3f)
+                    .height(100.dp)
+                    .align(Alignment.CenterVertically)
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column(
