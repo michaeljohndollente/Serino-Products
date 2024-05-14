@@ -37,8 +37,8 @@ fun ProductItem(
                 .padding(16.dp)
         ) {
             AsyncImage(
-                model = product.images.first(),
-                contentDescription = product.images.first(),
+                model = product.thumbnail,
+                contentDescription = product.thumbnail,
                 modifier = Modifier
                     .weight(1f)
                     .height(150.dp)
@@ -71,28 +71,5 @@ fun ProductItem(
                 )
             }
         }
-    }
-}
-
-@Preview
-@Composable
-fun ProductItemPreview() {
-    MyProductsTheme {
-        ProductItem(
-            product = Product(
-                id = 1,
-                title = "Product#1",
-                description = "This is the Product #1",
-                price = 10000,
-                discountPercentage = 15.0,
-                rating = 4.0,
-                stock = 2,
-                brand = "ProductBrand",
-                category = "ProductCategory",
-                thumbnail = "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-                images = listOf("https://cdn.dummyjson.com/product-images/1/thumbnail.jpg")
-            ),
-            modifier = Modifier.fillMaxWidth()
-        )
     }
 }
