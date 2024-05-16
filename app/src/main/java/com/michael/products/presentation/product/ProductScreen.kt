@@ -105,6 +105,9 @@ fun ProductScreen(
                     if (products.loadState.append is LoadState.Loading) {
                         CircularProgressIndicator()
                     }
+                    if (products.loadState.refresh is LoadState.Loading){
+                        CircularProgressIndicator()
+                    }
                 }
             }
         }

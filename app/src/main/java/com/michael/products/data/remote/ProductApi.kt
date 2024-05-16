@@ -6,8 +6,8 @@ import retrofit2.http.Query
 interface ProductApi {
     @GET("products")
     suspend fun getProducts(
-        @Query("page") page: Int,
-        @Query("per_page") pageCount: Int
+        @Query("skip") skip: Int,
+        @Query("limit") limit: Int,
     ): ProductsData
 
     companion object {
